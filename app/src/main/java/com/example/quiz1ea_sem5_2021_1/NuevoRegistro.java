@@ -53,7 +53,7 @@ public class NuevoRegistro extends AppCompatActivity implements View.OnClickList
                             }
                         }
 
-                        if (isRegistered == false ) {
+                        if (!isRegistered) {
                             preferences.edit().putString("userNames",
                                     preferences.getString("userNames","") + name).apply();
 

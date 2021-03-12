@@ -49,7 +49,7 @@ public class Sintomas extends AppCompatActivity implements CompoundButton.OnChec
                         if(fiebreCheck.isChecked() || dolorGargantaCheck.isChecked()
                                 || congestionCheck.isChecked() || tosCheck.isChecked()
                                     || fatigaCheck.isChecked() || respirarCheck.isChecked()) {
-                            toContinue = false;
+                            //toContinue = false;
                             Toast.makeText(this, "Verifique sus respuestas", Toast.LENGTH_SHORT).show();
                         }
                         //para cuando no ha seleccionado ninguna
@@ -88,7 +88,7 @@ public class Sintomas extends AppCompatActivity implements CompoundButton.OnChec
                                 toContinue = true;
                             }
 
-                            if(toContinue == true){
+                            if(toContinue){
                                 SharedPreferences preferences = getSharedPreferences("registros", MODE_PRIVATE);
                                 points += preferences.getInt("puntosNexo", 1000);
 
