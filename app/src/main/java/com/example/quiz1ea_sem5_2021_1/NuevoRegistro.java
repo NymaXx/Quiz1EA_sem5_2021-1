@@ -27,50 +27,54 @@ public class NuevoRegistro extends AppCompatActivity implements View.OnClickList
         toNexoButton = findViewById(R.id.toNexoButton);
         isRegistered = false;
 
-        toNexoButton.setOnClickListener(
-                v -> {
-                    String name = nameInput.getText().toString();
-                    String id = idInput.getText().toString();
-
-                    SharedPreferences preferences = getSharedPreferences("registros", MODE_PRIVATE);
-                    String existId = preferences.getString("idNumber", "");
-
-                    if (existId != null) {
-                        String[] ids;
-                        ids = existId.split(",");
-
-                        for (int i = 0; i < ids.length; i++) {
-                            if (ids[i].equals(ids)) {
-
-                                isRegistered = true;
-                                Toast.makeText(this, "El numero de identificacion ya fue regitrado",
-                                        Toast.LENGTH_SHORT).show();
-                                return;
-
-                            } else {
-                                isRegistered = false;
-                            }
-                        }
-
-                        if (!isRegistered) {
-                            preferences.edit().putString("nameUser",
-                                    preferences.getString("nameUser","") + name).apply();
-
-                            preferences.edit().putString("idNumber",
-                                    preferences.getString("idNumber","") + name).apply();
-
-
-                            Intent i2 = new Intent(this, NexoEpidemiologico.class);
-                            startActivity(i2);
-                            finish();
-                        }
-                    }
-                }
-        );
+        toNexoButton.setOnClickListener(this);
     }
 
-    @Override
     public void onClick(View v) {
 
+        switch (v.getId()){
+
+            case R.id.toNexoButton:
+                String name = nameInput.getText().toString();
+                String id = idInput.getText().toString();
+
+                //ingreso a mi espacio en shared preferences
+                SharedPreferences preferences = getSharedPreferences("registros", MODE_PRIVATE);
+                //Ids que ya existen en el espacio
+                String existId = preferences.getString("idNumbers", "");
+
+                if (existId != null) {
+                    String[] ids;
+                    ids = existId.split(",");
+
+                    for (int i = 0; i < ids.length; i++) {
+                        if (ids[i].equals(ids)) {
+
+                            isRegistered = true;
+                            Toast.makeText(this, "El numero de identificacion ya fue registrado",
+                                    Toast.LENGTH_SHORT).show();
+                            return;
+
+                        } else {
+                            isRegistered = false;
+                        }
+                    }
+
+                    if (isRegistered == true) {
+                        preferences.edit().putString("userNames",
+                                preferences.getString("userNames","") + name).apply();
+
+                        preferences.edit().putString("idNumbers",
+                                preferences.getString("idNumbers","") + id).apply();
+
+
+                        Intent i2 = new Intent(this, NexoEpidemiologico.class);
+                        startActivity(i2);
+                        finish();
+                    }
+                }
+                break;
+            default:
+        }
     }
 }
