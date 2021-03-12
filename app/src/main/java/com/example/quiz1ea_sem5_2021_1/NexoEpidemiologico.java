@@ -39,6 +39,10 @@ public class NexoEpidemiologico extends AppCompatActivity implements View.OnClic
             case R.id.toSintomasButton:
                 Intent i3 = new Intent(this, Sintomas.class);
                 startActivity(i3);
+                finish();
+
+
+
                 break;
             default:
 

@@ -43,6 +43,7 @@ public class Sintomas extends AppCompatActivity implements View.OnClickListener{
             case R.id.finalizarButton:
                 Intent i4 = new Intent(this, MainActivity.class);
                 startActivity(i4);
+                finish();
                 break;
             default:
 
