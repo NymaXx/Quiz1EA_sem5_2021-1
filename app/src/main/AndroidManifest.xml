@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Quiz1EA_sem5_20211">
+        <activity android:name=".Sintomas"></activity>
+        <activity android:name=".NexoEpidemiologico" />
+        <activity android:name=".NuevoRegistro" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
