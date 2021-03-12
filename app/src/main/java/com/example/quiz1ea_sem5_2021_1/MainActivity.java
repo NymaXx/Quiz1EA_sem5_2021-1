@@ -2,6 +2,7 @@ package com.example.quiz1ea_sem5_2021_1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,11 +22,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         registerButton = findViewById(R.id.registerButton);
 
         registerButton.setOnClickListener(this);
+
     }
 
 
     @Override
     public void onClick(View v) {
+
+        switch (v.getId()){
+            case R.id.registerButton:
+                Intent i = new Intent(this, NuevoRegistro.class);
+                startActivity(i);
+                break;
+            default:
+
+        }
 
     }
 }
