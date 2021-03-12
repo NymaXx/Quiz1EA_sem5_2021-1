@@ -21,7 +21,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         namesList = findViewById(R.id.namesList);
         registerButton = findViewById(R.id.registerButton);
 
+        String identification = getSharedPreferences("id", MODE_PRIVATE).getString("name","noName");
+
         registerButton.setOnClickListener(this);
+
+        namesList.setText(identification);
 
     }
 
@@ -33,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.registerButton:
                 Intent i = new Intent(this, NuevoRegistro.class);
                 startActivity(i);
+
+
                 break;
             default:
 

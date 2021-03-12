@@ -3,6 +3,7 @@ package com.example.quiz1ea_sem5_2021_1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,12 +32,22 @@ public class NuevoRegistro extends AppCompatActivity implements View.OnClickList
 
         switch (v.getId()){
             case R.id.toNexoButton:
+
+                String name =nameInput.getText().toString();
+                String id = idInput.getText().toString();
+
                 Intent i2 = new Intent(this,NexoEpidemiologico.class);
                 startActivity(i2);
+
+                SharedPreferences preferences = getSharedPreferences("id",MODE_PRIVATE);
+                preferences.edit().putString("name", name).apply();
+
                 break;
             default:
 
         }
 
     }
+
+
 }
