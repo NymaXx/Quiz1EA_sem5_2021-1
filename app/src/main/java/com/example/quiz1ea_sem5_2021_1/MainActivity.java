@@ -47,17 +47,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     protected void onResume() {
         super.onResume();
-
         SharedPreferences preferences = getSharedPreferences("registros", MODE_PRIVATE);
-        String data = preferences.getString("name","");
+        String list = preferences.getString("userNames","");
 
-        namesList.setText(data);
+        namesList.setText(list);
+
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
 
 
     public void onBackPressed(){

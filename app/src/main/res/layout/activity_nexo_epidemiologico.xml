@@ -47,7 +47,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/contactoCheck"
+        android:id="@+id/check1"
         android:layout_width="333dp"
         android:layout_height="49dp"
         android:layout_marginStart="32dp"
@@ -62,7 +62,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/viajeNacCheck"
+        android:id="@+id/check3"
         android:layout_width="333dp"
         android:layout_height="49dp"
         android:layout_marginStart="32dp"
@@ -74,7 +74,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/ningunaCheck"
+        android:id="@+id/checkNinguno"
         android:layout_width="333dp"
         android:layout_height="49dp"
         android:layout_marginStart="32dp"
@@ -86,7 +86,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/trabSaludCheck"
+        android:id="@+id/check4"
         android:layout_width="333dp"
         android:layout_height="49dp"
         android:layout_marginStart="32dp"
@@ -98,7 +98,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/viajeIntCheck"
+        android:id="@+id/check2"
         android:layout_width="333dp"
         android:layout_height="49dp"
         android:layout_marginStart="32dp"
